@@ -6,7 +6,7 @@ const startMessage = document.querySelector("#start-message");
 const gameoverMessage = document.querySelector("#gameover-message");
 
 document.addEventListener("keydown", startGame, { once: true });
-document.addEventListener("click", startGame, { once: true });
+document.addEventListener("touchstart", startGame, { once: true });
 /* general variables */
 let lastTime;
 let speedScale;
@@ -142,8 +142,8 @@ function setupDino() {
   setCustomProperty(dino, "--bottom", 0);
   document.removeEventListener("keydown", onJump); /* reset the dinosaur if the player dies while jumping */
   document.addEventListener("keydown", onJump);
-   document.removeEventListener("click", onJump);
-  document.addEventListener("click", onJump);
+   document.removeEventListener("touchstart", onJump);
+  document.addEventListener("touchstart", onJump);
 }
 
 function updateDino(delta, speedScale) {
